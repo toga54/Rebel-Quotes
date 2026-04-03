@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كلمات الأحرار</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="quote-container">
+        <h4>{{ I["text"] }}</h4>
+        <p>{{ I["author"] }}</p>
+        <form method="POST">
+            <input type="hidden" name="ind" value="{{ Ind }}">
+            <button type="submit" name="action" value="sabeq" class="btn-secondary">السابق  ➡️</button>
+            <button type="button" class="btn btn-primary" onclick="navigator.clipboard.writeText('{{ I.text }}'); alert('تم النسخ!')">
+                نسخ  📋
+            </button>
+            <button type="submit" name="action" value="tali" class="btn-primary">التالي ⬅️</button>
+        </form>
+    </div>
+    <div class="developer-name"> <span> طاطي اين توخما </span></div>
+
+    
+    
+</body>
+</html>
